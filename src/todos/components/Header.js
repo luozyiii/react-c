@@ -12,12 +12,15 @@ export default function (props) {
   const handleInputKeyUp = (e) => {
     if (e.keyCode === 13 && value) {
       props.addUndoItem(value);
+      setValue('');
     }
   };
 
   return (
-    <div>
-      <input data-test="input" value={value} onChange={handleInputChange} onKeyUp={handleInputKeyUp} />
+    <div className="header">
+      <div className="header-content">
+        Todos <input placeholder="add todo" className="header-input" value={value} onChange={handleInputChange} onKeyUp={handleInputKeyUp} data-test="input" />
+      </div>
     </div>
   );
 }

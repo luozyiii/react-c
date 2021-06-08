@@ -7,6 +7,11 @@ import Header from '../../components/Header';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+it('Header 渲染样式正常', () => {
+  const wrapper = shallow(<Header />);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('Header 组件包含一个 input 框', () => {
   const wrapper = shallow(<Header />);
   const inputElem = wrapper.find('[data-test="input"]');
@@ -59,4 +64,20 @@ it('Header 组件 input 框内容，当用户输入时，会跟随变化', () =>
 //   });
 //   expect(fn).toHaveBeenCalled();
 //   expect(fn).toHaveBeenLastCalledWith(userInput);
+// });
+
+// it('Header 组件 input 框输入回车时，如果 input 无内容，最后应该清除掉', () => {
+//   const fn = jest.fn();
+//   const wrapper = shallow(<Header />);
+//   const inputElem = wrapper.find('[data-test="input"]');
+//   const userInput = '学习 React';
+//   // setState 只能在class 组件中使用
+//   wrapper.setState({
+//     value: userInput,
+//   });
+//   inputElem.simulate('keyUp', {
+//     keyCode: 13,
+//   });
+//   const newInputElem = wrapper.find('[data-test="input"]');
+//   expect(newInputElem.prop('value')).toBe('');
 // });
