@@ -42,6 +42,14 @@ moduleNameMapper: {
 
 ### jest 如何测试 hooks？
 
+> 测试有返回值的 hook
+
+- @testing-library/react
+
+```javascript
+yarn add --dev @testing-library/react
+```
+
 ### 简单示例 Hello 组件
 
 ```javascript
