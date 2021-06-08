@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "rollup -wc rollup.config.dev.js",
+    "dev:demo": "rollup -wc rollup.config.demo.js",
     "build": "rollup -c rollup.config.dev.js",
     "build:prod": "rollup -c rollup.config.prod.js",
     "test": "jest --watchAll"

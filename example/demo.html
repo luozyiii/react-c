@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>示例</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="../dist/demo/umd.js"></script>
+  </head>
+  <body>
+    <div id="hello"></div>
+    <div id="todos"></div>
+    <script>
+      // Hello 组件 示例
+      const helloContainer = document.querySelector('#hello');
+      ReactDOM.render(React.createElement(Demo.Hello), helloContainer);
+
+      // Todos 示例
+      const domContainer = document.querySelector('#todos');
+      ReactDOM.render(React.createElement(Demo.Todos), domContainer);
+    </script>
+  </body>
+</html>

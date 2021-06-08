@@ -40,8 +40,28 @@ moduleNameMapper: {
 },
 ```
 
-- 简单示例 Hello 组件
+### jest 如何测试 hooks？
+
+### 简单示例 Hello 组件
 
 ```javascript
 // src/components/hello
+```
+
+### 项目指令说明
+
+```javascript
+// demo 打包后，配合 npm 包 serve 在本地构建服务器, 浏览器访问 example
+yarn dev:demo
+serve ./
+
+// 组件测试开发
+yarn dev
+// 组件打包,不压缩
+yarn build
+// 组件打包，压缩，正式环境
+yarn build:prod
+
+// 前端测试自动化
+yarn test
 ```
