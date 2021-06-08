@@ -1,6 +1,6 @@
 # react-c
 
-React 组件库开发, rollup 负责构建；enzyem + jest 负责前端自动化测试；.prettierrc + vscode 自定义工作区。
+React 组件库开发, rollup 负责构建；enzyem + jest 负责前端自动化测试；.prettierrc + vscode 自定义工作区, 保持代码风格一致。
 
 ### react 前端自动化测试
 
