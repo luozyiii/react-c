@@ -1,11 +1,8 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import { expect } from '@jest/globals';
 
 import Todos from '../../index';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 it('Todos 初始化列表为空', () => {
   // const wrapper = shallow(<Todos />);

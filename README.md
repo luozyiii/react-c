@@ -40,7 +40,7 @@ moduleNameMapper: {
 },
 ```
 
-### jest 如何测试 hooks？
+- jest 如何测试 hooks？
 
 > 测试有返回值的 hook
 
@@ -48,6 +48,17 @@ moduleNameMapper: {
 
 ```javascript
 yarn add --dev @testing-library/react
+```
+
+- 公用代码抽离
+
+```javascript
+// utils/testUtils.js
+
+// utils/testSetup.js 然后在jest.config.js 配置；
+// 结果：测试代码执行前, 先加载 testSetup.js
+setupFilesAfterEnv: ['./node_modules/jest-enzyme/lib/index.js', '<rootDir>/src/utils/testSetup.js'],
+
 ```
 
 ### 简单示例 Hello 组件
