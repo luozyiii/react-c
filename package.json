@@ -1,0 +1,48 @@
+{
+  "name": "react-c",
+  "version": "1.0.0",
+  "description": "React 组件库",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -wc rollup.config.dev.js",
+    "build": "rollup -c rollup.config.dev.js",
+    "build:prod": "rollup -c rollup.config.prod.js",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luozyiii/react-c.git"
+  },
+  "keywords": [
+    "React 组件库"
+  ],
+  "author": "leslie <924361501@qq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luozyiii/react-c/issues"
+  },
+  "homepage": "https://github.com/luozyiii/react-c#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.4",
+    "jest-enzyme": "^7.1.2",
+    "less": "^4.1.1",
+    "postcss": "^8.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.50.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
