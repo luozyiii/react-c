@@ -20,6 +20,9 @@ export default class Header extends Component {
     const { value } = this.state;
     if (e.keyCode === 13 && value) {
       this.props.addUndoItem(value);
+      this.setState({
+        value: '',
+      });
     }
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './components/Header';
+import UndoList from './components/UndoList';
 import './style.less';
 
 export default class Todos extends Component {
@@ -10,6 +11,7 @@ export default class Todos extends Component {
       undoList: [],
     };
     this.addUndoItem = this.addUndoItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
   addUndoItem(value) {
@@ -19,19 +21,20 @@ export default class Todos extends Component {
     });
   }
 
+  deleteItem(index) {
+    const newList = [...this.state.undoList];
+    newList.splice(index, 1);
+    this.setState({
+      undoList: newList,
+    });
+  }
+
   render() {
     const { undoList } = this.state;
     return (
       <div>
         <Header addUndoItem={this.addUndoItem} />
-        <div>
-          <p>正在进行</p>
-          <ul>
-            {undoList.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        <UndoList list={undoList} deleteItem={this.deleteItem} />
       </div>
     );
   }
