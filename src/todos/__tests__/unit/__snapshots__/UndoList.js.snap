@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UndoList 组件 渲染样式正常 1`] = `
+<div
+  className="undo-list"
+>
+  <div
+    className="undo-list-title"
+  >
+    正在进行
+    <div
+      className="undo-list-count"
+      data-test="count"
+    >
+      0
+    </div>
+  </div>
+  <ul
+    className="undo-list-content"
+  />
+</div>
+`;
