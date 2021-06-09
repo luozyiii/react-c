@@ -1,26 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
-export default function (props) {
-  const [value, setValue] = useState('');
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleInputKeyUp = this.handleInputKeyUp.bind(this);
+  }
 
-  useEffect(() => {}, []);
+  handleInputChange(e) {
+    this.setState({
+      value: e.target.value,
+    });
+  }
 
-  const handleInputChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  const handleInputKeyUp = (e) => {
+  handleInputKeyUp(e) {
+    const { value } = this.state;
     if (e.keyCode === 13 && value) {
-      props.addUndoItem(value);
-      setValue('');
+      this.props.addUndoItem(value);
     }
-  };
+  }
 
-  return (
-    <div className="header">
-      <div className="header-content">
-        Todos <input placeholder="add todo" className="header-input" value={value} onChange={handleInputChange} onKeyUp={handleInputKeyUp} data-test="input" />
+  render() {
+    const { value } = this.state;
+    return (
+      <div className="header">
+        <div className="header-content">
+          Todos <input placeholder="add todo" className="header-input" value={value} onChange={this.handleInputChange} onKeyUp={this.handleInputKeyUp} data-test="input" />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
