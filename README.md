@@ -124,6 +124,12 @@ Enzyme.configure({ adapter: new Adapter() });
 5. 速度慢
 ```
 
+### 使用 BDD 和集成测试进行 Redux 项目的测试
+
+```javascript
+yarn add redux react-redux -D
+```
+
 ### 项目指令说明
 
 ```javascript
