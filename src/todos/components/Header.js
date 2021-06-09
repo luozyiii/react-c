@@ -31,7 +31,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <div className="header-content">
-          Todos <input placeholder="add todo" className="header-input" value={value} onChange={this.handleInputChange} onKeyUp={this.handleInputKeyUp} data-test="input" />
+          Todos <input placeholder="add todo" className="header-input" value={value} onChange={this.handleInputChange} onKeyUp={this.handleInputKeyUp} data-test="header-input" />
         </div>
       </div>
     );

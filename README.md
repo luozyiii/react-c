@@ -67,6 +67,63 @@ setupFilesAfterEnv: ['./node_modules/jest-enzyme/lib/index.js', '<rootDir>/src/u
 // src/components/hello
 ```
 
+### 采用 TDD 模式开发一个 Todos 项目， 编写单元测试
+
+```javascript
+// 单元测试代码 todos/__test__/unit
+// 项目代码 todos/
+```
+
+- TDD
+  代码质量提高; 先写测试，再写代码。
+- 单元测试
+  > 适合工具函数库
+  > 测试覆盖率高、业务耦合度高、代码量大、过于独立
+
+### TDD 和集成测试
+
+```javascript
+// 集成测试代码 todos/__test__/integration
+// 项目代码 todos/
+```
+
+- TDD
+  先写功能模块代码，再写测试用例
+- 集成测试
+
+- jest mount Cannot read property 'child' of undefined
+  [link](https://github.com/enzymejs/enzyme/issues/2429)
+
+```javascript
+// 更换包
+yarn add --dev @wojtekmaj/enzyme-adapter-react-17
+
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+Enzyme.configure({ adapter: new Adapter() });
+```
+
+### TDD 与 BDD 区别
+
+- TDD
+
+```
+1. 先写测试再写代码
+2. 一般结合单元测试使用，是白盒测试
+3. 测试重点在代码
+4. 安全感低
+5. 速度快
+```
+
+- BDD
+
+```
+1. 先写代码再写测试
+2. 一般结合集成测试使用，是黑盒测试
+3. 测试重点在UI（DOM）
+4. 安全感高
+5. 速度慢
+```
+
 ### 项目指令说明
 
 ```javascript

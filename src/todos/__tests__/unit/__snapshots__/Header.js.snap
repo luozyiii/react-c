@@ -10,7 +10,7 @@ exports[`Header 组件 渲染样式正常 1`] = `
     Todos 
     <input
       className="header-input"
-      data-test="input"
+      data-test="header-input"
       onChange={[Function]}
       onKeyUp={[Function]}
       placeholder="add todo"

@@ -54,7 +54,9 @@ describe('UndoList 组件', () => {
     const index = 1;
     const wrapper = shallow(<UndoList deleteItem={fn} list={listData} />);
     const deleteItem = findTestWrapper(wrapper, 'delete-item');
-    deleteItem.at(index).simulate('click');
+    deleteItem.at(index).simulate('click', {
+      stopPropagation: jest.fn(),
+    });
     expect(fn).toHaveBeenLastCalledWith(index);
   });
 

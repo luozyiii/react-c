@@ -84,7 +84,10 @@ describe('Todos 组件', () => {
 
   it('changeValue 方法被调用，undoList 数据项 value 被修改', () => {
     const wrapper = shallow(<Todos />);
-    const data = [{ status: 'input', value: '学习Jest' }];
+    const data = [
+      { status: 'input', value: '学习Jest' },
+      { status: 'div', value: '学习TDD' },
+    ];
     const value = 'dell lee';
     wrapper.setState({
       undoList: data,

@@ -12,32 +12,32 @@ describe('Header 组件', () => {
 
   it('组件包含输入框', () => {
     const wrapper = shallow(<Header />);
-    const inputElem = findTestWrapper(wrapper, 'input');
+    const inputElem = findTestWrapper(wrapper, 'header-input');
     expect(inputElem.length).toBe(1);
   });
 
   it('输入框内容，初始化为空', () => {
     const wrapper = shallow(<Header />);
-    const inputElem = findTestWrapper(wrapper, 'input');
+    const inputElem = findTestWrapper(wrapper, 'header-input');
     expect(inputElem.prop('value')).toEqual('');
   });
 
   it('输入框内容，随用户输入变化', () => {
     const wrapper = shallow(<Header />);
-    const inputElem = findTestWrapper(wrapper, 'input');
+    const inputElem = findTestWrapper(wrapper, 'header-input');
     const userInput = '今天要学习 Jest';
     inputElem.simulate('change', {
       target: { value: userInput },
     });
     // expect(wrapper.state('value')).toEqual(userInput); // state 只能在class 组件中使用
-    const newInputElem = wrapper.find('[data-test="input"]');
+    const newInputElem = findTestWrapper(wrapper, 'header-input');
     expect(newInputElem.prop('value')).toEqual(userInput);
   });
 
   it('输入框无内容时，触发回车事件，无反应', () => {
     const fn = jest.fn();
     const wrapper = shallow(<Header addUndoItem={fn} />);
-    const inputElem = findTestWrapper(wrapper, 'input');
+    const inputElem = findTestWrapper(wrapper, 'header-input');
     // setState 只能在class 组件中使用
     wrapper.setState({
       value: '',
@@ -51,7 +51,7 @@ describe('Header 组件', () => {
   it('输入框有内容回车事件被触发时，外部传入的函数被调用， 内容清空', () => {
     const fn = jest.fn();
     const wrapper = shallow(<Header addUndoItem={fn} />);
-    const inputElem = findTestWrapper(wrapper, 'input');
+    const inputElem = findTestWrapper(wrapper, 'header-input');
     const userInput = '学习 React';
     // setState 只能在class 组件中使用
     wrapper.setState({
@@ -63,7 +63,7 @@ describe('Header 组件', () => {
     expect(fn).toHaveBeenCalled();
     expect(fn).toHaveBeenLastCalledWith(userInput);
 
-    const newInputElem = wrapper.find('[data-test="input"]');
+    const newInputElem = findTestWrapper(wrapper, 'header-input');
     expect(newInputElem.prop('value')).toBe('');
   });
 });
